@@ -1,0 +1,112 @@
+{
+  "network": {
+    "scale": "medium",
+    "tier_sizes": {
+      "suppliers": 6,
+      "manufacturers": 8,
+      "distributors": 10,
+      "retailers": 6
+    },
+    "demand_range": [
+      50,
+      150
+    ],
+    "edge_conn_frac": [
+      0.4,
+      0.6
+    ]
+  },
+  "siot": {
+    "trust_init_clip": [
+      0.3,
+      0.95
+    ],
+    "trust_gain": 0.03,
+    "trust_loss": 0.05,
+    "trust_floor": 0.1
+  },
+  "env": {
+    "state_size": 9,
+    "max_steps": 20,
+    "reward_weights": [
+      0.6,
+      0.4
+    ],
+    "service_weight": 5.0,
+    "disconnect_penalty": -10.0,
+    "reward_clip": [
+      -25.0,
+      25.0
+    ]
+  },
+  "agents": {
+    "shared": {
+      "hidden": [
+        128,
+        128
+      ],
+      "gamma": 0.95
+    },
+    "DQN": {
+      "lr": 0.001,
+      "gamma": 0.95,
+      "epsilon_start": 1.0,
+      "epsilon_min": 0.05,
+      "epsilon_decay": 0.995,
+      "buffer_size": 20000,
+      "batch_size": 128,
+      "target_update": 10
+    },
+    "PPO": {
+      "lr": 0.0003,
+      "gamma": 0.95,
+      "clip": 0.2,
+      "epochs": 4,
+      "batch_size": 64,
+      "gae_lambda": 0.95,
+      "entropy_coef": 0.01,
+      "value_coef": 0.5
+    },
+    "A2C": {
+      "lr": 0.0005,
+      "gamma": 0.95,
+      "rollout": 32,
+      "entropy_coef": 0.01,
+      "value_coef": 0.5
+    }
+  },
+  "training": {
+    "episodes": 150,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "disruption": {
+    "stages": 10,
+    "failure_step": 0.05,
+    "demand_step": 0.1,
+    "affected_frac": 0.3,
+    "seed": 7,
+    "cumulative": true
+  },
+  "analysis": {
+    "convergence_tol": 0.05,
+    "stability_window": 30,
+    "significance_alpha": 0.05
+  },
+  "runtime": {
+    "device": "cpu",
+    "torch_seed": null,
+    "figure_dpi": 300
+  },
+  "version": "3.0"
+}

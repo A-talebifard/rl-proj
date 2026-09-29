@@ -1,0 +1,47 @@
+{
+  "DQN": {
+    "n_add": 2,
+    "n_remove": 18,
+    "n_skipped": 0,
+    "entropy": null,
+    "epsilon": 0.4714787374216858,
+    "n_actions": 376,
+    "tier_delta": {
+      "suppliers->manufacturers": -2,
+      "manufacturers->distributors": -8,
+      "distributors->retailers": -6
+    },
+    "edges_initial": 82,
+    "edges_final": 66
+  },
+  "PPO": {
+    "n_add": 9,
+    "n_remove": 11,
+    "n_skipped": 0,
+    "entropy": 5.2364420890808105,
+    "epsilon": null,
+    "n_actions": 376,
+    "tier_delta": {
+      "suppliers->manufacturers": 0,
+      "manufacturers->distributors": -1,
+      "distributors->retailers": 0
+    },
+    "edges_initial": 82,
+    "edges_final": 81
+  },
+  "A2C": {
+    "n_add": 6,
+    "n_remove": 14,
+    "n_skipped": 0,
+    "entropy": 5.236369609832764,
+    "epsilon": null,
+    "n_actions": 376,
+    "tier_delta": {
+      "suppliers->manufacturers": -2,
+      "manufacturers->distributors": -3,
+      "distributors->retailers": -3
+    },
+    "edges_initial": 82,
+    "edges_final": 74
+  }
+}
